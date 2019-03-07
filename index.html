@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      canvas {
+      }
+      
+      textarea {
+        width:200px;
+        height:200px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <textarea id="textarea">
+      grid parameters\n
+    </textarea>
+    
+    <canvas id="canvas"></canvas>
+    
+    <script>
+      let context = canvas.getContext('2d');
+      context.fillRect(0,0,10,100);
+      
+      function UpdateGridImage() {
+      }
+      
+      setInterval(()=>{
+        console.log(textarea.value);
+      },2000);
+    </script>
+  </body>
+ <html>
