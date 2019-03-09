@@ -28,6 +28,8 @@
       
       setInterval(()=>{
         console.log(textarea.value);
+        // TODO: Add check for if text has changed since past interval
+        ParseText();
       },2000);
       
       function ParseText() {
