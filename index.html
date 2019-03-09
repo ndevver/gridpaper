@@ -27,13 +27,13 @@
       }
       
       setInterval(()=>{
-        console.log(textarea.value);
         // TODO: Add check for if text has changed since past interval
         ParseText();
       },2000);
       
       function ParseText() {
         let lines = textarea.value.split('\n');
+        console.log(lines);
         ParseCanvasSize(lines[0]);
       }
       function ParseCanvasSize(string) {
