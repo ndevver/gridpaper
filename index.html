@@ -41,6 +41,8 @@
         console.log('Parsing canvas size from line: ' + string);
         let words = string.split(' ');
         console.log(words);
+        canvas.width = parseInt(words[0]);
+        canvas.height = parseInt(words[1]);
       }
     </script>
   </body>
