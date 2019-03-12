@@ -2,8 +2,11 @@
 <html>
   <head>
     <style>
+      html, body {
+        background-color:gray;
+      }
       canvas {
-        background-color:black;
+        background-color:white;
       }
       
       textarea {
@@ -14,7 +17,12 @@
   </head>
   
   <body>
-    <textarea id="textarea">300, 400</textarea>
+    <textarea id="textarea">600, 600
+#aaa
+1, 10, 10
+#555
+1, 50, 50
+</textarea>
     
     <canvas id="canvas"></canvas>
     
@@ -34,6 +42,12 @@
         let lines = textarea.value.split('\n');
         console.log(lines);
         ParseCanvasSize(lines[0]);
+        for(let x=1; x<lines.length; x++) {
+          if(parseInt(lines[x])) ParseGridLine(lines[x]);
+          else {
+            context.fillStyle = lines[x];
+          }
+        }
       }
       function ParseCanvasSize(string) {
          // gets the grid dimensions  from the first row of the textarea
@@ -42,6 +56,25 @@
         console.log(words);
         canvas.width = parseInt(words[0]);
         canvas.height = parseInt(words[1]);
+      }
+      function ParseGridLine(string) {
+        let words = string.split(' ');
+        let values = [];
+        for(let x=0; x<words.length; x++) {
+          values[x] = parseInt(words[x]);
+        }
+        if(!values[1] || !values[2]) {
+          return;
+        }
+        let thickness = values[0];
+        let y = values[1];
+        for(let y=values[1]; y<3000; y+=values[1]) {
+          context.fillRect(0,y,canvas.width,thickness);
+        }
+        let x = values[1];
+        for(let x=values[2]; x<3000; x+=values[2]) {
+          context.fillRect(x,0,thickness,canvas.height);
+        }
       }
     </script>
   </body>
