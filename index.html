@@ -17,7 +17,8 @@
   </head>
   
   <body>
-    <textarea id="textarea">600, 600
+    <textarea id="textarea">black gray
+600, 600
 #aaa
 1, 10, 10
 #555
@@ -41,13 +42,20 @@
       function ParseText() {
         let lines = textarea.value.split('\n');
         console.log(lines);
-        ParseCanvasSize(lines[0]);
-        for(let x=1; x<lines.length; x++) {
+        ParseCanvasColor(lines[0]);
+        ParseCanvasSize(lines[1]);
+        for(let x=2; x<lines.length; x++) {
           if(parseInt(lines[x])) ParseGridLine(lines[x]);
           else {
             context.fillStyle = lines[x];
           }
         }
+      }
+      function ParseCanvasColor(string) {
+        let words = string.split(' ');
+        document.documentElement.style.backgroundColor = words[0];
+        document.body.style.backgroundColor = words[0];
+        canvas.style.backgroundColor = words[1];
       }
       function ParseCanvasSize(string) {
          // gets the grid dimensions  from the first row of the textarea
