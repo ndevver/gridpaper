@@ -22,5 +22,5 @@ Grid line descriptors will come in the form of triplets, i.e. 1, 5, 10, with
 the first value being the width of the lines, the second bei:withng horizontal
 spacing, and the third being vertical spacing.
 
-TODO: Add grid background color, and page background color.
-TODO: Add URL bookmarking of grid parameters.
+Added grid background color, and page background color.
+Added URL bookmarking of grid parameters.
