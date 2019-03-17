@@ -24,7 +24,7 @@
 1, 10, 10
 #555
 1, 50, 50
-10, 10, 20, 20
+50, 50
 </textarea>
     
     <canvas id="canvas"></canvas>
@@ -76,11 +76,11 @@
         for(let x=0; x<words.length; x++) {
           values[x] = parseInt(words[x]);
         }
-        if(!values[1] || !values[2]) {
+        if(values.length == 2) {
+          DrawFilledGrid(values);
           return;
         }
-        if(values.length == 4) {
-          DrawFilledGrid(values);
+        if(!values[1] || !values[2]) {
           return;
         }
         let thickness = values[0];
@@ -101,9 +101,10 @@
       function DrawFilledGrid(values) {
         // first two values are rectangle size to fill
         // second two values are spacing
-        for(let x=0; x<3000; x+=values[2]) {
-          for(let y=0; y<3000; y+=values[3]) {
+        for(let x=0; x<3000; x+=values[0]*2) {
+          for(let y=0; y<3000; y+=values[1]*2) {
             context.fillRect(x,y,values[0],values[1]);
+            context.fillRect(x+values[0],y+values[1],values[0],values[1]);
           }
         }
       }
