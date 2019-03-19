@@ -25,6 +25,10 @@ spacing, and the third being vertical spacing.
 Added grid background color, and page background color.
 Added URL bookmarking of grid parameters.
 
-TODO: Add transparency style dual color grid with filled squares.
+Added transparency style dual color grid with filled squares.
 This shouldn't be very hard to accomplish by just adding another route
 that checks for 4 arguments on a grid line instead of 3.
+
+TODO: Optimize drawing loops.
+TODO: Rewrite readme.
+TODO: Add some links with useful grids already set up.
