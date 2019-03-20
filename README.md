@@ -16,3 +16,5 @@ spacing, and the third being vertical spacing.
 
 Grid block descriptors have two values, one for horizontal size, and one for
 vertical. This creates a grid similar to a background transparency grid.
+
+[512x512, with 16x16, and 64x64 grids](https://ndevver.github.io/gridpaper/?gray%20white%0A512,%20512%0A#d8d8d8%0A1,%2016,%2016%0A#aaaaaa%0A1,%2064,%2064%0A)
